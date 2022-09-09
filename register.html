@@ -1,0 +1,251 @@
+<html>
+	<head>
+<title>FORM</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<script type="text/javascript">
+function fun()
+{
+var name=document.getElementById("email").value;
+if(form.email.value == "")
+				 {
+       					document.getElementById("res2").innerHTML=" Email cannot be blank!";
+      					form.email.focus();
+      					return false;
+				}
+}
+
+</script>
+		<style>
+			*, *:before, *:after
+			 {
+  				-moz-box-sizing: border-box;
+  				-webkit-box-sizing: border-box;
+  				box-sizing: border-box;
+			}
+input:focus {
+  outline: none;
+  	border: 1px solid red;
+}
+			body 
+			{
+				 font-family: 'Nunito', sans-serif;
+				color: #384047;
+				background-image:url(1.jpg);
+    				background-size: cover;
+    				background-attachment:fixed;
+				backdrop-filter: blur(5px); 
+			}
+			form 
+			{
+  				max-width: 300px;
+  				margin: 10px auto;
+ 				padding: 10px 20px;
+  				background: #f4f7f8;
+  				border-radius: 8px;
+			}
+			h1
+			 {
+				margin: 0 0 30px 0;
+				text-align: center;
+				text-shadow:4px 4px 4px pink;
+			}
+			input[type="text"],input[type="password"],input[type="date"],input[type="datetime"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="time"],input[type="url"],textarea,select 
+			{
+				background: rgba(255,255,255,0.1);
+  				border: none;
+  				font-size: 16px;
+				height: auto;
+ 				margin: 0;
+  				outline: 0;
+ 				padding: 15px;
+				width: 100%;
+  				background-color: #e8eeef;
+  				color: #8a97a0;
+  				box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  				margin-bottom: 30px;  
+			}
+			.input-icons i 	
+			{
+            				position: absolute;
+        			}
+			.input-icons
+			 {
+            				width: 100%;
+            				margin-bottom: 10px;
+        			}
+        			.icon 
+			{
+            				padding:15px 0px 0px 380px;
+            				color: black;
+            				min-width: 50px;
+            				text-align: center;
+        			}
+ 			input[type="radio"],input[type="checkbox"] 
+			{
+				margin: 0 4px 8px 0; 
+			} 
+			.sub:hover
+			{
+				background-color:blue;
+			}
+			select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+
+  form {
+    max-width: 480px;
+  }
+</style>
+
+    </head>
+    <body>
+<script>
+function fun()
+{
+alert("Logged in successfully");
+}
+function password(form)
+			{
+				
+                                                                         if(form.email.value=="")
+				 {
+       					document.getElementById("res2").innerHTML=" Email cannot be blank!";
+      					form.email.focus();
+      					return false;
+				}
+if(form.pwd1.value == "")
+			 	{
+       					document.getElementById("res").innerHTML="Password cannot be blank!";
+      					form.pwd1.focus();
+      					return false;
+				}
+    			
+   				 if(form.pwd1.value != "") 
+				{
+      					if(form.pwd1.value.length < 8 ) 
+					{
+						document.getElementById("res").innerHTML="Password must contain at least eight characters!";
+        						form.pwd1.focus();
+        						return false;
+    					}
+					if(form.pwd1.value == form.username.value) 
+					{
+						 document.getElementById("res").innerHTML="Password must be different from Username!";
+	       					 form.pwd1.focus();
+	        					return false;
+	    				}
+					re = /[0-9]/;
+	    				if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one number (0-9)!";
+	       					 form.pwd1.focus();
+	       					return false;
+	    				}
+	    				re = /[a-z]/;
+	    				if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one lowercase letter (a-z)!";
+	        					form.pwd1.focus();
+	        					return false;
+	   				 }
+	     				re = /[A-Z]/;
+	    				if(!re.test(form.pwd1.value))
+					 {
+	       					 document.getElementById("res").innerHTML="password must contain at least one uppercase letter (A-Z)!";
+	        					form.pwd1.focus();
+	        					return false;
+	    				}
+					re=/[!@~#$%^&*]/;
+					if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one symbol!";
+	        					form.pwd1.focus();
+	        					return false;
+	    				}
+if(form.pwd1.value !=form.pwd2.value)
+			 	{
+       					document.getElementById("res3").innerHTML="Password mismatch!";
+      					form.username.focus();
+      					return false;
+				}
+    				}
+				document.write("<b><center><h1>Thank you!!!</h1><br><h3>Your Account has been successfully created</h3></center></b>");
+    				return true;
+}
+</script>
+
+      <div class="row">
+    <div class="col-md-12">
+      <form onsubmit="return (password(this)&& false );">
+        <h1><b>FORM</b></h1>
+          <fieldset>
+         
+        
+          <label for="name">Email:</label>
+
+         <div class="in"> <input type="text" id="email" name="email" autocomplete="off"></input>
+<p id = "res2" style="color:red"></p>
+</div>
+<label for="email">Password:</label>
+ <div class="in"> <input type="text" id="pwd1" name="pwd1" autocomplete="off"></input>
+<p id = "res" style="color:red"></p></div>
+         </fieldset>
+        <button type="submit" class="sub" onclick="fun()">SUBMIT</button>
+<center><a href="form.html">Create a new account</a></center>
+    </fieldset>
+       </form>
+ 
+      </div>      
+    </body>
+</html>

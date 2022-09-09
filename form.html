@@ -1,0 +1,319 @@
+<html>
+	<head>
+<title>FORM</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<style>
+			*, *:before, *:after
+			 {
+  				-moz-box-sizing: border-box;
+  				-webkit-box-sizing: border-box;
+  				box-sizing: border-box;
+			}
+			body 
+			{
+				 font-family: 'Nunito', sans-serif;
+				color: #384047;
+				background-image:url(1.jpg);
+    				background-size: cover;
+    				background-attachment:fixed;
+				backdrop-filter: blur(5px); 
+			}
+			form 
+			{
+  				max-width: 300px;
+  				margin: 10px auto;
+ 				padding: 10px 20px;
+  				background: #f4f7f8;
+  				border-radius: 8px;
+			}
+			h1
+			 {
+				margin: 0 0 30px 0;
+				text-align: center;
+				text-shadow:4px 4px 4px pink;
+			}
+			input[type="text"],input[type="password"],input[type="date"],input[type="datetime"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="time"],input[type="url"],textarea,select 
+			{
+				background: rgba(255,255,255,0.1);
+  				border: none;
+  				font-size: 16px;
+				height: auto;
+ 				margin: 0;
+  				outline: 0;
+ 				padding: 15px;
+				width: 100%;
+  				background-color: #e8eeef;
+  				color: #8a97a0;
+  				box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  				margin-bottom: 30px;  
+outline: none;
+  	border: 1px solid green;
+			}
+			.input-icons i 	
+			{
+            				position: absolute;
+        			}
+			.input-icons
+			 {
+            				width: 100%;
+            				margin-bottom: 10px;
+        			}
+        			.icon 
+			{
+            				padding:15px 0px 0px 380px;
+            				color: black;
+            				min-width: 50px;
+            				text-align: center;
+        			}
+ 			input[type="radio"],input[type="checkbox"] 
+			{
+				margin: 0 4px 8px 0; 
+			} 
+			.sub:hover
+			{
+				background-color:blue;
+			}
+			select {
+  padding: 6px;
+  height: 32px;
+  border-radius:1px;
+}
+input:focus {
+  outline: none;
+  	border: 1px solid red;
+}
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+
+  form {
+    max-width: 480px;
+  }
+</style>
+
+    </head>
+    <body><script>
+function fun()
+{
+var name=document.getElementById("name").value;
+alert("Hello "+name+"!Nice to meet you. Your account has been successfully created");
+}
+function password(form)
+			{
+				
+                                                                         if(form.email.value=="")
+				 {
+       					document.getElementById("res2").innerHTML=" Email cannot be blank!";
+      					form.email.focus();
+      					return false;
+				}
+if(form.pwd1.value == "")
+			 	{
+       					document.getElementById("res").innerHTML="Password cannot be blank!";
+      					form.pwd1.focus();
+      					return false;
+				}
+    			
+   				 if(form.pwd1.value != "") 
+				{
+      					if(form.pwd1.value.length < 8 ) 
+					{
+						document.getElementById("res").innerHTML="Password must contain at least eight characters!";
+        						form.pwd1.focus();
+        						return false;
+    					}
+					if(form.pwd1.value == form.username.value) 
+					{
+						 document.getElementById("res").innerHTML="Password must be different from Username!";
+	       					 form.pwd1.focus();
+	        					return false;
+	    				}
+					re = /[0-9]/;
+	    				if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one number (0-9)!";
+	       					 form.pwd1.focus();
+	       					return false;
+	    				}
+	    				re = /[a-z]/;
+	    				if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one lowercase letter (a-z)!";
+	        					form.pwd1.focus();
+	        					return false;
+	   				 }
+	     				re = /[A-Z]/;
+	    				if(!re.test(form.pwd1.value))
+					 {
+	       					 document.getElementById("res").innerHTML="password must contain at least one uppercase letter (A-Z)!";
+	        					form.pwd1.focus();
+	        					return false;
+	    				}
+					re=/[!@~#$%^&*]/;
+					if(!re.test(form.pwd1.value)) 
+					{
+	        					document.getElementById("res").innerHTML="password must contain at least one symbol!";
+	        					form.pwd1.focus();
+	        					return false;
+	    				}
+if(form.pwd2.value == "")
+			 	{
+       					document.getElementById
+("res3").innerHTML="Re-type password!";
+      					form.pwd2.focus();
+      					return false;
+				}
+    			
+if(form.pwd1.value !=form.pwd2.value)
+			 	{
+       					document.getElementById("res3").innerHTML="Password mismatch!";
+      					form.pwd2.focus();
+      					return false;
+				}
+    	
+}
+document.write("<b><center><h1>Thank you!!!</h1><br><h3>Your Account has been successfully created</h3></center></b>");
+    				return true;
+		
+	}
+</script>
+
+      <div class="row">
+    <div class="col-md-12">
+      <form onsubmit="return (password(this)&& false );" action=" ">
+        <h1><b>FORM</b></h1>
+        
+        <fieldset>
+          
+          <legend><span class="number">1</span><b> YOUR BASIC DETAILS</b></legend>
+        
+          <label for="name">Name:</label>
+<div class="input-icons">
+                <i class="fa fa-user icon">
+              </i></div>
+         <div class="in"> <input type="text" id="name" name="user_name" autocomplete="off"></input>
+</div>
+<label for="fname">Father Name:</label>
+<div class="input-icons">
+                <i class="fa fa-user icon">
+              </i>
+          <input type="text" id="fname" name="fname" autocomplete="off">
+</div>
+<label for="gender">Gender:</label>
+          <input type="radio" id="male" name="gender">Male</input>
+          <input type="radio" id="female" name="gender">Female</input><br><br>
+ <label for="dob">DOB:</label>
+<input type="date" id="dob">
+        
+          <label for="email">Email:</label>
+<div class="input-icons">
+                <i class="fa fa-envelope icon">
+              </i>
+
+
+          <input type="text" id="email" name="email"><p id="res2" style="color:red"></p></div>
+<label for="pwd">Password:</label>
+<div class="input-icons">
+                <i class="fa fa-key icon">
+              </i>
+          <input type="text"  id="pwd1" name="pwd1"><p id="res" style="color:red"></p></div>
+<label for="pwd">Re-type Password:</label>
+<div class="input-icons">
+                <i class="fa fa-key icon">
+              </i>
+          <input type="text"  id="pwd2" name="pwd2"><p id="res3" style="color:red"></p></div>
+<label for="phone">Contact number:</label>
+<div class="input-icons">
+                <i class="fa fa-phone icon">
+              </i>
+          <input type="tel"  id="contact" name="contact_number"></div>
+<label for="address">Address:</label>
+         <div> <textarea id="address" name="address"></textarea></div>
+        </fieldset>
+        <fieldset>  
+        
+          <legend><span class="number">2</span> <b>YOUR PROFILE</b></legend>
+<label for="qua">Qualification:</label>
+<div class="input-icons">
+                <i class="fa fa-graduation-cap icon">
+              </i>
+          <input type="text" id="qua" name="qua"></div>
+       <label for="dept">Department:</label>
+          <input type="text" id="dept" name="dept">   
+         <label for="bio">Bio:</label>
+          <textarea id="bio" name="user_bio"></textarea>        
+         <label for="job">Job Role:</label>
+          <select id="job" name="user_job">
+            <optgroup label="Web">
+              <option value="frontend_developer">Front-End Developer</option>
+              <option value="php_developer">PHP Developer</option>
+              <option value="python_developer">Python Developer</option>
+              <option value="rails_developer">Rails Developer</option>
+              <option value="web_designer">Web Designer</option>
+              <option value="wordpress_developer">Wordpress Developer</option>
+            </optgroup>
+            <optgroup label="Mobile">
+              <option value="android_developer">Android Developer</option>
+              <option value="ios_developer">IOS Developer</option>
+              <option value="mobile_designer">Mobile Designer</option>
+            </optgroup>
+            <optgroup label="Business">
+              <option value="business_owner">Business Owner</option>
+              <option value="freelancer">Freelancer</option>
+            </optgroup>
+          </select>
+<label for="email">Resume</label>
+          <input type="file" id="resume" name="resume"><br><br>
+<input type="checkbox">I hereby declare that the details furnished above are true and correct to the best of my knowledge.</input>
+         </fieldset>
+        <button type="submit" class="sub" onclick="fun()" >SUBMIT</button>
+       </form>
+        </div>
+      </div>      
+    </body>
+</html>
